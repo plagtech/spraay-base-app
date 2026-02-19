@@ -4,7 +4,7 @@
     "payload": "eyJkb21haW4iOiJzcHJhYXktYmFzZS1kYXBwLnZlcmNlbC5hcHAifQ",
     "signature": "WOX981jSAe6pT7m/Gslfbm0nLWss3OcCrf8oLrrhoSlJMV0M42jmbjBRXBt6g2f7NO73i6VeQaZmQnhqTbAI3xs="
   },
-  "frame": {
+  "miniapp": {
     "version": "1",
     "name": "Spraay",
     "subtitle": "Batch Payments on Base",

@@ -7,7 +7,7 @@ const APP_URL = 'https://spraay-base-dapp.vercel.app';
 
 export const metadata: Metadata = {
   title: 'Spraay - Batch Crypto Payments on Base',
-  description: 'Send ETH or ERC-20 tokens to 200+ recipients in a single transaction on Base.',
+  description: 'Send ETH or ERC20 tokens to hundreds of recipients in a single transaction on Base.',
   other: {
     'base:app_id': '69965f787b16c9a7e63e9754',
     'fc:miniapp': JSON.stringify({
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
       button: {
         title: 'Open Spraay',
         action: {
-          type: 'launch_frame',
+          type: 'launch_miniapp',
           name: 'Spraay',
           url: APP_URL,
           splashImageUrl: `${APP_URL}/spraay-splash.png`,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Spraay - Batch Payments on Base',
-    description: 'Send crypto to 200+ wallets in one transaction. Save 80% on gas fees.',
+    description: 'Send crypto to hundreds of wallets in one transaction. Save on gas fees with Spraay.',
     url: APP_URL,
     images: [{ url: `${APP_URL}/spraay-og-wide.png` }],
   },
