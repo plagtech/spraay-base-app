@@ -6,6 +6,9 @@ import { Providers } from './providers';
 export const metadata: Metadata = {
   title: 'Spraay – Batch Crypto Payments on Base',
   description: 'Send ETH or ERC-20 tokens to 200+ recipients in a single transaction on Base. ~80% gas savings.',
+  other: {
+    'base:app_id': '69965f787b16c9a7e63e9754',
+  },
   openGraph: {
     title: 'Spraay – Batch Payments on Base',
     description: 'Send crypto to 200+ recipients in one tx. ~80% gas savings.',
