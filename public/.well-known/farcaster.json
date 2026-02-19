@@ -23,11 +23,3 @@
     "heroImageUrl": "https://spraay-base-dapp.vercel.app/spraay-og-wide.png"
   }
 }
-```
-
-Save and close. Then:
-```
-Remove-Item -Recurse src\app\.well-known
-git add .
-git commit -m "Move farcaster manifest to public static file"
-git push
