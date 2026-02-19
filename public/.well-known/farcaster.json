@@ -22,6 +22,11 @@
     "ogDescription": "Send crypto to hundreds of wallets in one transaction. Save on gas fees with Spraay.",
     "ogImageUrl": "https://spraay-base-dapp.vercel.app/spraay-og-wide.png",
     "heroImageUrl": "https://spraay-base-dapp.vercel.app/spraay-og-wide.png",
+    "screenshotUrls": [
+      "https://spraay-base-dapp.vercel.app/screenshot-1.png",
+      "https://spraay-base-dapp.vercel.app/screenshot-2.png",
+      "https://spraay-base-dapp.vercel.app/screenshot-3.png"
+    ],
     "noindex": false
   }
 }
