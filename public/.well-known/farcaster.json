@@ -8,7 +8,8 @@
     "version": "1",
     "name": "Spraay",
     "subtitle": "Batch Payments on Base",
-    "description": "Send ETH or ERC-20 tokens to 200+ recipients in a single transaction on Base.",
+    "tagline": "Batch payments made simple",
+    "description": "Send ETH or ERC20 tokens to hundreds of recipients in a single transaction on Base. Save gas and time with batch payments.",
     "iconUrl": "https://spraay-base-dapp.vercel.app/spraay-icon-200.png",
     "homeUrl": "https://spraay-base-dapp.vercel.app",
     "imageUrl": "https://spraay-base-dapp.vercel.app/spraay-og-wide.png",
@@ -18,8 +19,9 @@
     "primaryCategory": "finance",
     "tags": ["base", "payments", "defi", "batch", "erc20"],
     "ogTitle": "Spraay - Send Batch Payments",
-    "ogDescription": "Send crypto to 200+ wallets in one transaction. Save 80% on gas fees.",
+    "ogDescription": "Send crypto to hundreds of wallets in one transaction. Save on gas fees with Spraay.",
     "ogImageUrl": "https://spraay-base-dapp.vercel.app/spraay-og-wide.png",
-    "heroImageUrl": "https://spraay-base-dapp.vercel.app/spraay-og-wide.png"
+    "heroImageUrl": "https://spraay-base-dapp.vercel.app/spraay-og-wide.png",
+    "noindex": false
   }
 }
