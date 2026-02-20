@@ -106,6 +106,23 @@ export const ERC20_ABI = [
   },
 ] as const;
 
+// Ethers.js v5 ABI strings (used by V2 hooks)
+export const ETHERS_ABI = [
+  "function sprayETH(tuple(address recipient, uint256 amount)[] recipients) payable",
+  "function sprayToken(address token, tuple(address recipient, uint256 amount)[] recipients)",
+  "function sprayEqual(address token, address[] recipients, uint256 amountPerRecipient) payable",
+  "function calculateFee(uint256 amount) view returns (uint256)",
+  "function feeBps() view returns (uint256)",
+];
+
+export const ETHERS_ERC20_ABI = [
+  "function approve(address spender, uint256 amount) returns (bool)",
+  "function allowance(address owner, address spender) view returns (uint256)",
+  "function decimals() view returns (uint8)",
+  "function symbol() view returns (string)",
+  "function balanceOf(address account) view returns (uint256)",
+];
+
 // Common ERC-20 tokens on Base
 export const COMMON_TOKENS = {
   USDC: { address: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913' as const, decimals: 6, symbol: 'USDC' },

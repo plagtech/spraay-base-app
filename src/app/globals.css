@@ -48,6 +48,15 @@ body {
   100% { background-position: 200% 0; }
 }
 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(220, 20, 60, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(220, 20, 60, 0.4); }
+}
+
 .animate-row-in {
   animation: fadeIn 0.2s ease;
 }
@@ -56,8 +65,30 @@ body {
   animation: slideUp 0.3s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
+.animate-step-in {
+  animation: fadeIn 0.3s ease;
+}
+
+.animate-spin-slow {
+  animation: spin 1.2s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
 .shimmer-loading {
   background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
+}
+
+/* Number input: hide spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }

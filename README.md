@@ -1,86 +1,54 @@
-# Spraay – Base App
+# Spraay V2 – Batch Send + Buy & Spraay
 
-Mobile-first batch payment dApp built with **Next.js + OnchainKit** on Base.
+Two-page dApp on Base. Original batch sender + fiat-to-batch onramp flow.
 
-Send ETH or ERC-20 tokens to 200+ recipients in a single transaction. ~80% gas savings.
+## Pages
 
-## Stack
+| Route | Feature | Description |
+|-------|---------|-------------|
+| `/` | **Batch Send** | V1 batch sender (ETH, USDC, DAI, WETH, custom tokens). Connect wallet, add recipients, spray. |
+| `/buy` | **Buy & Spraay** | 4-step flow: choose USDC or ETH → set amount → add recipients → buy via Coinbase Onramp → auto-distribute. |
 
-- **Next.js 14** — React framework
-- **OnchainKit** — Coinbase wallet connection, transaction handling, identity, paymaster
-- **Tailwind CSS** — Styling
-- **viem** — Ethereum interaction utilities
-- **wagmi** — React hooks for Ethereum
+Tab navigation between both pages. V1 home page includes a "Need crypto? Buy & Spraay" banner linking to `/buy`.
 
-## Features
+## What's New
 
-- ✅ Coinbase Smart Wallet + MetaMask + WalletConnect support
-- ✅ Gasless transactions via Coinbase Paymaster
-- ✅ ETH & ERC-20 batch sends (variable or equal amounts)
-- ✅ CSV upload for bulk distributions
-- ✅ Live ETH-to-USD conversion
-- ✅ Confirmation modal before sending
-- ✅ Mobile-first responsive design
-- ✅ Basename/Identity resolution via OnchainKit
+- **USDC + ETH onramp** — Buy USDC (zero fee on Base) or ETH (~1.5% spread) via Coinbase
+- **4-step guided flow** — Amount → Recipients → Review → Spraay
+- **Fee transparency** — Full breakdown before every transaction
+- **Direct spray option** — Skip onramp if you already have funds
+- **Session token auth** — Secure server-side JWT for onramp initialization
+- **Tab navigation** — Switch between Batch Send and Buy & Spraay
 
-## Quick Start
-
-### 1. Install dependencies
+## Setup
 
 ```bash
+# 1. Copy V2 files into your spraay-base-app project folder (replace existing)
+# 2. Keep your existing .env.local, then add 3 new vars:
+
+NEXT_PUBLIC_CDP_PROJECT_ID=your_project_id
+CDP_API_KEY=your_api_key_name
+CDP_API_SECRET=your_api_secret
+
+# 3. Install and run
 npm install
-```
-
-### 2. Configure environment
-
-```bash
-cp .env.local.example .env.local
-```
-
-Edit `.env.local` and add your keys:
-
-```
-NEXT_PUBLIC_ONCHAINKIT_API_KEY=your_cdp_client_api_key
-NEXT_PUBLIC_PAYMASTER_URL=https://api.developer.coinbase.com/rpc/v1/base/your_paymaster_key
-```
-
-Get your keys from [portal.cdp.coinbase.com](https://portal.cdp.coinbase.com/projects/api-keys/client-key).
-
-### 3. Run dev server
-
-```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Get all keys from [portal.cdp.coinbase.com](https://portal.cdp.coinbase.com).
 
-### 4. Deploy to Vercel
+## Fee Structure
 
-```bash
-npx vercel
-```
-
-Set environment variables in Vercel project settings.
+| Fee | USDC | ETH |
+|-----|------|-----|
+| Coinbase Onramp | **FREE** | ~1.5% spread |
+| Spraay Protocol | 0.3% | 0.3% |
+| Base Network Gas | ~$0.05 (sponsored) | ~$0.05 (sponsored) |
 
 ## Contract
 
-**Spraay on Base Mainnet:** `0x1646452F98E36A3c9Cfc3eDD8868221E207B5eEC`
-
-- [View on BaseScan](https://basescan.org/address/0x1646452F98E36A3c9Cfc3eDD8868221E207B5eEC)
-- Protocol fee: 0.3%
-- Max recipients: 200 per tx
-
-## Contract Functions
-
-| Function | Description |
-|----------|-------------|
-| `sprayETH` | Batch send ETH with variable amounts |
-| `sprayToken` | Batch send ERC-20 with variable amounts |
-| `sprayEqual` | Batch send equal amounts (ETH or ERC-20) |
+`0x1646452F98E36A3c9Cfc3eDD8868221E207B5eEC` on Base Mainnet
 
 ## Links
 
-- 🌐 [spraay.app](https://spraay.app)
-- 🐦 [@Spraay_app](https://twitter.com/Spraay_app)
-- 🔵 [BaseScan](https://basescan.org/address/0x1646452F98E36A3c9Cfc3eDD8868221E207B5eEC)
-- 💻 [GitHub](https://github.com/plagtech)
+- [spraay.app](https://spraay.app) · [@Spraay_app](https://twitter.com/Spraay_app) · [BaseScan](https://basescan.org/address/0x1646452F98E36A3c9Cfc3eDD8868221E207B5eEC)
