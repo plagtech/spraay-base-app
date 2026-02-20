@@ -3,7 +3,7 @@
 import type { Recipient, SplitMode, BuyAsset } from '../BuyAndSpraayFlow';
 
 function fmt(n: number) {
-  return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 function shortAddr(addr: string) {

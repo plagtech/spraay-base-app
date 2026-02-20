@@ -63,7 +63,7 @@ export function BuyAndSpraayFlow() {
   const afterOnramp = totalSpend - onrampFee;
   const spraayFee = afterOnramp * (SPRAAY_FEE_BPS / 10000);
   const totalFees = onrampFee + spraayFee + NETWORK_FEE_ESTIMATE_USD;
-  const distributableAmount = Math.max(0, totalSpend - totalFees);
+  const distributableAmount = Math.max(0, Math.round((totalSpend - totalFees) * 100) / 100);
 
   const validRecipients = useMemo(() => {
     return recipients.filter(r => isAddress(r.address));

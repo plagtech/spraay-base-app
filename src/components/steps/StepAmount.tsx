@@ -18,7 +18,7 @@ interface StepAmountProps {
 const PRESETS = [25, 50, 100, 250, 500, 1000];
 
 function fmt(n: number) {
-  return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 export function StepAmount({
