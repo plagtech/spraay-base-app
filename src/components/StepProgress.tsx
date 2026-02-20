@@ -1,6 +1,6 @@
 'use client';
 
-import type { Step } from './SpraayFlow';
+import type { Step } from './BuyAndSpraayFlow';
 
 const STEPS = [
   { key: 'amount', label: 'Amount' },
