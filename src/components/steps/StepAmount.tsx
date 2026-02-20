@@ -104,7 +104,7 @@ export function StepAmount({
           </div>
           <div className="flex justify-between items-center pt-2 mt-1 border-t border-spraay-red/20">
             <span className="font-bold text-sm">Recipients share</span>
-            <span className="font-mono font-bold text-spraay-red">~${fmt(distributableAmount)}</span>
+            <span className="font-mono font-bold text-green-400">${fmt(distributableAmount)}</span>
           </div>
         </div>
       )}

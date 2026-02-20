@@ -66,7 +66,7 @@ export function StepBreakdown({
           <FeeRow label="Network Fee (est.)" value={`$${fmt(networkFee)}`} />
           <div className="flex justify-between items-center pt-2.5 mt-1 border-t border-spraay-red/20">
             <span className="text-sm font-bold">Total to Recipients</span>
-            <span className="font-mono font-bold text-spraay-red text-base">~${fmt(distributableAmount)} {buyAsset}</span>
+            <span className="font-mono font-bold text-green-400 text-base">${fmt(distributableAmount)} {buyAsset}</span>
           </div>
         </div>
       </div>

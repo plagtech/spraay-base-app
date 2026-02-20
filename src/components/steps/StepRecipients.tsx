@@ -41,7 +41,7 @@ export function StepRecipients({
       <div className="text-center mb-4">
         <h2 className="text-lg font-extrabold">Where should it go?</h2>
         <p className="text-sm text-zinc-500 mt-1">
-          <span className="text-spraay-red font-bold">~${fmt(distributableAmount)}</span> {buyAsset} to distribute
+          <span className="text-green-400 font-bold">${fmt(distributableAmount)}</span> {buyAsset} to distribute
         </p>
       </div>
 
@@ -96,8 +96,8 @@ export function StepRecipients({
               )}
 
               {splitMode === 'even' && addrValid && (
-                <span className="text-xs font-bold text-spraay-red font-mono pl-7 sm:pl-0 sm:min-w-[80px] sm:text-right">
-                  ~${fmt(evenSplitAmount)}
+                <span className="text-xs font-bold text-green-400 font-mono pl-7 sm:pl-0 sm:min-w-[80px] sm:text-right">
+                  ${fmt(evenSplitAmount)}
                 </span>
               )}
 
