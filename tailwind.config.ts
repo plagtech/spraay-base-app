@@ -10,18 +10,19 @@ const config: Config = {
     extend: {
       colors: {
         spraay: {
-          red: '#DC143C',
-          deep: '#8B0000',
-          dark: '#5C0000',
-          glow: 'rgba(220, 20, 60, 0.12)',
+          blue: '#0090e0',
+          bright: '#00aaff',
+          deep: '#005fa3',
+          dark: '#003d6b',
+          glow: 'rgba(0, 170, 255, 0.12)',
         },
         base: {
           blue: '#0052FF',
         },
       },
       fontFamily: {
-        sans: ['Satoshi', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
+        mono: ['Space Mono', 'monospace'],
       },
     },
   },

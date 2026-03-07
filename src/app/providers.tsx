@@ -12,8 +12,8 @@ export function Providers({ children }: { children: ReactNode }) {
       config={{
         appearance: {
           name: 'Spraay',
-          mode: 'dark',
-          theme: 'cyberpunk',
+          mode: 'light',
+          theme: 'default',
         },
         paymaster: process.env.NEXT_PUBLIC_PAYMASTER_URL,
         wallet: {

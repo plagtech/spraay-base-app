@@ -2,13 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Satoshi:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --spraay-red: #DC143C;
-  --spraay-deep: #8B0000;
-  --spraay-glow: rgba(220, 20, 60, 0.12);
-  --spraay-border: rgba(220, 20, 60, 0.3);
+  --spraay-blue:        #0090e0;
+  --spraay-deep:        #005fa3;
+  --spraay-bright:      #00aaff;
+  --spraay-glow:        rgba(0, 170, 255, 0.12);
+  --spraay-border:      rgba(0, 144, 224, 0.2);
+  --spraay-border-bright: rgba(0, 170, 255, 0.45);
+  --bg:                 #f0f7ff;
+  --bg-card:            #ffffff;
+  --bg-card-hover:      #f5faff;
+  --bg-input:           #f0f7ff;
+  --text:               #0d1f2d;
+  --text-dim:           #4a6070;
+  --text-muted:         #8aa5b8;
 }
 
 * {
@@ -16,21 +25,21 @@
 }
 
 body {
-  font-family: 'Satoshi', system-ui, -apple-system, sans-serif;
-  background: #0a0a0a;
-  color: #f4f4f5;
+  font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
 
-/* OnchainKit theme overrides for Spraay brand */
-.ock-bg-default { background: #111113 !important; }
-.ock-bg-alternate { background: #0a0a0a !important; }
-.ock-border-default { border-color: rgba(255,255,255,0.06) !important; }
+/* OnchainKit theme overrides for Spraay blue brand */
+.ock-bg-default { background: #ffffff !important; }
+.ock-bg-alternate { background: #f0f7ff !important; }
+.ock-border-default { border-color: rgba(0, 144, 224, 0.2) !important; }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(220,20,60,0.3); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: rgba(0, 144, 224, 0.3); border-radius: 4px; }
 
 /* Animations */
 @keyframes fadeIn {
@@ -53,8 +62,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(220, 20, 60, 0.2); }
-  50% { box-shadow: 0 0 40px rgba(220, 20, 60, 0.4); }
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 170, 255, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(0, 170, 255, 0.4); }
 }
 
 .animate-row-in {
@@ -78,7 +87,7 @@ body {
 }
 
 .shimmer-loading {
-  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 144, 224, 0.06) 50%, transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }

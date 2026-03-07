@@ -218,9 +218,9 @@ export function BuyAndSpraayFlow() {
       {/* Title */}
       <div className="text-center py-5">
         <h1 className="text-2xl font-black tracking-tight">
-          Buy &amp; <span className="bg-gradient-to-br from-spraay-red to-spraay-deep bg-clip-text text-transparent">Spraay</span>
+          Buy &amp; <span className="bg-gradient-to-br from-spraay-blue to-spraay-deep bg-clip-text text-transparent">Spraay</span>
         </h1>
-        <p className="text-sm text-zinc-600 mt-1">
+        <p className="text-sm text-[#8aa5b8] mt-1">
           Buy crypto and send to multiple wallets in one flow
         </p>
       </div>
@@ -308,12 +308,12 @@ export function BuyAndSpraayFlow() {
       </div>
 
       {/* Footer */}
-      <div className="text-center py-6 text-xs text-zinc-600 space-x-2">
-        <a href="https://spraay.app" className="hover:text-zinc-400 transition-colors">spraay.app</a>
+      <div className="text-center py-6 text-xs text-[#8aa5b8] space-x-2">
+        <a href="https://spraay.app" className="hover:text-[#4a6070] transition-colors">spraay.app</a>
         <span>·</span>
-        <a href="https://basescan.org/address/0x1646452F98E36A3c9Cfc3eDD8868221E207B5eEC" target="_blank" className="hover:text-zinc-400 transition-colors">BaseScan</a>
+        <a href="https://basescan.org/address/0x1646452F98E36A3c9Cfc3eDD8868221E207B5eEC" target="_blank" className="hover:text-[#4a6070] transition-colors">BaseScan</a>
         <span>·</span>
-        <a href="https://twitter.com/Spraay_app" target="_blank" className="hover:text-zinc-400 transition-colors">@Spraay_app</a>
+        <a href="https://twitter.com/Spraay_app" target="_blank" className="hover:text-[#4a6070] transition-colors">@Spraay_app</a>
       </div>
     </main>
   );

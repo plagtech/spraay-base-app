@@ -20,7 +20,7 @@ export const metadata: Metadata = {
           name: 'Spraay',
           url: APP_URL,
           splashImageUrl: `${APP_URL}/spraay-splash.png`,
-          splashBackgroundColor: '#0a0a0a',
+          splashBackgroundColor: '#f0f7ff',
         },
       },
     }),
@@ -43,7 +43,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: '#0a0a0a',
+  themeColor: '#f0f7ff',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

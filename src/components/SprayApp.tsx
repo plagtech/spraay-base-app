@@ -420,26 +420,26 @@ export function SprayApp() {
       {/* Title */}
       <div className="text-center py-5">
         <h1 className="text-2xl font-black tracking-tight">
-          Batch <span className="bg-gradient-to-br from-spraay-red to-spraay-deep bg-clip-text text-transparent">Send</span>
+          Batch <span className="bg-gradient-to-br from-spraay-blue to-spraay-deep bg-clip-text text-transparent">Send</span>
         </h1>
-        <p className="text-sm text-zinc-600 mt-1">Send to 200+ wallets in one transaction</p>
+        <p className="text-sm text-[#8aa5b8] mt-1">Send to 200+ wallets in one transaction</p>
       </div>
 
       {/* Main Card */}
-      <div className="bg-[#111113] border border-white/[0.06] rounded-2xl p-5 relative">
-        <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-spraay-red/30 to-transparent" />
+      <div className="bg-white border border-[rgba(0,144,224,0.2)] rounded-2xl p-5 relative">
+        <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-spraay-blue/30 to-transparent" />
 
         {/* Mode Toggle */}
-        <div className="flex bg-[#0a0a0a] rounded-xl p-0.5 border border-white/[0.06] mb-4">
+        <div className="flex bg-[#f0f7ff] rounded-xl p-0.5 border border-[rgba(0,144,224,0.2)] mb-4">
           <button
             onClick={() => setMode('eth')}
-            className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-all ${mode === 'eth' ? 'bg-spraay-deep text-white shadow-lg shadow-spraay-red/20' : 'text-zinc-600'}`}
+            className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-all ${mode === 'eth' ? 'bg-spraay-deep text-[#0d1f2d] shadow-lg shadow-spraay-blue/20' : 'text-[#8aa5b8]'}`}
           >
             ETH
           </button>
           <button
             onClick={() => setMode('erc20')}
-            className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-all ${mode === 'erc20' ? 'bg-spraay-deep text-white shadow-lg shadow-spraay-red/20' : 'text-zinc-600'}`}
+            className={`flex-1 py-2.5 rounded-lg text-sm font-bold transition-all ${mode === 'erc20' ? 'bg-spraay-deep text-[#0d1f2d] shadow-lg shadow-spraay-blue/20' : 'text-[#8aa5b8]'}`}
           >
             ERC-20
           </button>
@@ -448,7 +448,7 @@ export function SprayApp() {
         {/* Token Section */}
         {mode === 'erc20' && (
           <div className="mb-4">
-            <label className="block text-[0.72rem] font-bold text-zinc-600 uppercase tracking-wider mb-1.5">
+            <label className="block text-[0.72rem] font-bold text-[#8aa5b8] uppercase tracking-wider mb-1.5">
               Token Address
             </label>
             <input
@@ -456,14 +456,14 @@ export function SprayApp() {
               value={tokenAddress}
               onChange={(e) => { setTokenAddress(e.target.value); setActiveTokenPick(null); }}
               placeholder="0x… paste ERC-20 address"
-              className="w-full px-3 py-3 bg-[#0e0e10] border border-white/[0.06] rounded-lg text-white font-mono text-sm outline-none focus:border-spraay-red/50 placeholder:text-zinc-600 transition-colors"
+              className="w-full px-3 py-3 bg-white border border-[rgba(0,144,224,0.2)] rounded-lg text-[#0d1f2d] font-mono text-sm outline-none focus:border-spraay-blue/50 placeholder:text-[#8aa5b8] transition-colors"
             />
             <div className="flex gap-1.5 mt-2">
               {(Object.keys(COMMON_TOKENS) as TokenKey[]).map(key => (
                 <button
                   key={key}
                   onClick={() => pickToken(key)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${activeTokenPick === key ? 'border-spraay-red/40 text-spraay-red bg-spraay-glow' : 'border-white/[0.06] text-zinc-500 bg-[#0a0a0a]'} border`}
+                  className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all ${activeTokenPick === key ? 'border-spraay-blue/40 text-spraay-blue bg-spraay-glow' : 'border-[rgba(0,144,224,0.2)] text-[#8aa5b8] bg-[#f0f7ff]'} border`}
                 >
                   {key}
                 </button>
@@ -473,21 +473,21 @@ export function SprayApp() {
             {customSymbol && !activeTokenPick && (
               <div className="mt-2 flex items-center gap-1.5">
                 <span className="text-xs font-bold text-green-400">✓</span>
-                <span className="text-xs font-semibold text-zinc-400">Detected: <span className="text-white font-bold">{customSymbol}</span></span>
+                <span className="text-xs font-semibold text-[#4a6070]">Detected: <span className="text-[#0d1f2d] font-bold">{customSymbol}</span></span>
               </div>
             )}
             {isFetchingSymbol && !activeTokenPick && (
-              <p className="mt-2 text-xs text-zinc-500">Looking up token…</p>
+              <p className="mt-2 text-xs text-[#8aa5b8]">Looking up token…</p>
             )}
           </div>
         )}
 
         {/* Equal Mode Toggle */}
         <div className="flex items-center justify-between py-3 mb-2">
-          <span className="text-sm font-semibold text-zinc-400">Equal amount to all</span>
+          <span className="text-sm font-semibold text-[#4a6070]">Equal amount to all</span>
           <button
             onClick={() => setEqualMode(!equalMode)}
-            className={`w-11 h-6 rounded-full relative transition-colors ${equalMode ? 'bg-spraay-red' : 'bg-zinc-600'}`}
+            className={`w-11 h-6 rounded-full relative transition-colors ${equalMode ? 'bg-spraay-blue' : 'bg-[#c0d5e5]'}`}
           >
             <div className={`absolute top-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform ${equalMode ? 'translate-x-[22px]' : 'translate-x-0.5'}`} />
           </button>
@@ -496,7 +496,7 @@ export function SprayApp() {
         {/* Equal Amount Input */}
         {equalMode && (
           <div className="mb-4">
-            <label className="block text-[0.72rem] font-bold text-zinc-600 uppercase tracking-wider mb-1.5">
+            <label className="block text-[0.72rem] font-bold text-[#8aa5b8] uppercase tracking-wider mb-1.5">
               Amount Per Recipient
             </label>
             <div className="relative">
@@ -506,21 +506,21 @@ export function SprayApp() {
                 value={equalAmount}
                 onChange={(e) => setEqualAmount(e.target.value)}
                 placeholder="0.00"
-                className="w-full px-3 py-3 pr-14 bg-[#0e0e10] border border-white/[0.06] rounded-lg text-white font-mono text-base outline-none focus:border-spraay-red/50 placeholder:text-zinc-600 transition-colors"
+                className="w-full px-3 py-3 pr-14 bg-white border border-[rgba(0,144,224,0.2)] rounded-lg text-[#0d1f2d] font-mono text-base outline-none focus:border-spraay-blue/50 placeholder:text-[#8aa5b8] transition-colors"
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-zinc-600">{symbol}</span>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-bold text-[#8aa5b8]">{symbol}</span>
             </div>
             {isEthMode && parseFloat(equalAmount) > 0 && (
-              <p className="text-[0.72rem] text-zinc-600 font-mono mt-1">{toUsd(parseFloat(equalAmount))}</p>
+              <p className="text-[0.72rem] text-[#8aa5b8] font-mono mt-1">{toUsd(parseFloat(equalAmount))}</p>
             )}
           </div>
         )}
 
         {/* Recipients Header */}
         <div className="flex justify-between items-center mb-2">
-          <label className="text-[0.72rem] font-bold text-zinc-600 uppercase tracking-wider">Recipients</label>
-          <span className="text-xs text-zinc-600 font-mono">
-            <strong className="text-zinc-400">{recipients.length}</strong> / 200
+          <label className="text-[0.72rem] font-bold text-[#8aa5b8] uppercase tracking-wider">Recipients</label>
+          <span className="text-xs text-[#8aa5b8] font-mono">
+            <strong className="text-[#4a6070]">{recipients.length}</strong> / 200
           </span>
         </div>
 
@@ -548,13 +548,13 @@ export function SprayApp() {
         <div className="flex gap-2 mb-4">
           <button
             onClick={() => addRow()}
-            className="flex-1 py-3 rounded-lg border border-dashed border-white/[0.06] text-zinc-500 font-semibold text-sm active:border-spraay-red/30 active:text-spraay-red active:bg-spraay-glow transition-all"
+            className="flex-1 py-3 rounded-lg border border-dashed border-[rgba(0,144,224,0.2)] text-[#8aa5b8] font-semibold text-sm active:border-spraay-blue/30 active:text-spraay-blue active:bg-spraay-glow transition-all"
           >
             + Add Recipient
           </button>
           <button
             onClick={() => csvRef.current?.click()}
-            className="flex-1 py-3 rounded-lg border border-dashed border-white/[0.06] text-zinc-500 font-semibold text-sm active:border-spraay-red/30 active:text-spraay-red active:bg-spraay-glow transition-all"
+            className="flex-1 py-3 rounded-lg border border-dashed border-[rgba(0,144,224,0.2)] text-[#8aa5b8] font-semibold text-sm active:border-spraay-blue/30 active:text-spraay-blue active:bg-spraay-glow transition-all"
           >
             📋 CSV Upload
           </button>
@@ -562,7 +562,7 @@ export function SprayApp() {
         </div>
 
         {/* Summary */}
-        <div className="bg-[#0a0a0a] border border-white/[0.06] rounded-xl p-4 mb-4">
+        <div className="bg-[#f0f7ff] border border-[rgba(0,144,224,0.2)] rounded-xl p-4 mb-4">
           <SummaryLine label="Recipients" value={String(validRecipients.length)} />
           <SummaryLine
             label="Total Amount"
@@ -574,12 +574,12 @@ export function SprayApp() {
             value={`${fee.toFixed(6)} ${symbol}`}
             usd={isEthMode ? toUsd(fee) : ''}
           />
-          <div className="flex justify-between items-center pt-3 mt-2 border-t border-spraay-red/20">
+          <div className="flex justify-between items-center pt-3 mt-2 border-t border-spraay-blue/20">
             <span className="text-sm font-bold">Total Cost</span>
-            <span className="font-mono font-bold text-spraay-red">
+            <span className="font-mono font-bold text-spraay-blue">
               {grandTotal.toFixed(6)} {symbol}
               {isEthMode && toUsd(grandTotal) && (
-                <span className="text-zinc-500 text-xs font-normal ml-1">{toUsd(grandTotal)}</span>
+                <span className="text-[#8aa5b8] text-xs font-normal ml-1">{toUsd(grandTotal)}</span>
               )}
             </span>
           </div>
@@ -590,13 +590,13 @@ export function SprayApp() {
           <button
             onClick={() => { setTxStatus(null); setShowConfirm(true); }}
             disabled={!canSpray}
-            className="w-full py-3.5 rounded-2xl font-extrabold text-base bg-gradient-to-br from-spraay-red to-spraay-deep border border-spraay-red/40 text-white active:scale-[0.98] transition-transform disabled:opacity-40 disabled:cursor-not-allowed min-h-[52px]"
+            className="w-full py-3.5 rounded-2xl font-extrabold text-base bg-gradient-to-br from-spraay-blue to-spraay-deep border border-spraay-bright/40 text-white active:scale-[0.98] transition-transform disabled:opacity-40 disabled:cursor-not-allowed min-h-[52px]"
           >
             {canSpray ? `🚀 Spray ${grandTotal.toFixed(4)} ${symbol}` : 'Add recipients to spray'}
           </button>
         ) : (
           <div className="text-center py-3">
-            <p className="text-sm text-zinc-500">Connect your wallet above to spray</p>
+            <p className="text-sm text-[#8aa5b8]">Connect your wallet above to spray</p>
           </div>
         )}
 
@@ -604,19 +604,19 @@ export function SprayApp() {
         {txStatus && (
           <div className={`mt-3 p-3 rounded-lg text-sm ${
             txStatus.type === 'success' ? 'bg-green-500/10 border border-green-500/20 text-green-400' :
-            txStatus.type === 'error' ? 'bg-spraay-red/10 border border-spraay-red/20 text-spraay-red' :
+            txStatus.type === 'error' ? 'bg-spraay-blue/10 border border-spraay-blue/20 text-spraay-blue' :
             'bg-yellow-500/10 border border-yellow-500/20 text-yellow-400'
           }`} dangerouslySetInnerHTML={{ __html: txStatus.msg }} />
         )}
       </div>
 
       {/* Footer */}
-      <div className="text-center py-6 text-xs text-zinc-600 space-x-2">
-        <a href="https://spraay.app" className="hover:text-zinc-400 transition-colors">spraay.app</a>
+      <div className="text-center py-6 text-xs text-[#8aa5b8] space-x-2">
+        <a href="https://spraay.app" className="hover:text-spraay-blue transition-colors">spraay.app</a>
         <span>·</span>
-        <a href="https://basescan.org/address/0x1646452F98E36A3c9Cfc3eDD8868221E207B5eEC" target="_blank" className="hover:text-zinc-400 transition-colors">BaseScan</a>
+        <a href="https://basescan.org/address/0x1646452F98E36A3c9Cfc3eDD8868221E207B5eEC" target="_blank" className="hover:text-spraay-blue transition-colors">BaseScan</a>
         <span>·</span>
-        <a href="https://twitter.com/Spraay_app" target="_blank" className="hover:text-zinc-400 transition-colors">@Spraay_app</a>
+        <a href="https://twitter.com/Spraay_app" target="_blank" className="hover:text-spraay-blue transition-colors">@Spraay_app</a>
       </div>
 
       {/* ═══════════════════════════════════════════
@@ -624,24 +624,24 @@ export function SprayApp() {
           ═══════════════════════════════════════════ */}
       {showConfirm && (
         <div
-          className="fixed inset-0 z-[1000] bg-black/85 backdrop-blur-sm flex items-end sm:items-center justify-center"
+          className="fixed inset-0 z-[1000] bg-[#0d1f2d]/60 backdrop-blur-sm flex items-end sm:items-center justify-center"
           onClick={(e) => { if (e.target === e.currentTarget) setShowConfirm(false); }}
         >
-          <div className="animate-slide-up bg-[#111113] border border-white/[0.06] rounded-t-2xl sm:rounded-2xl w-full max-w-[540px] p-5 pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))] max-h-[85dvh] overflow-y-auto">
+          <div className="animate-slide-up bg-white border border-[rgba(0,144,224,0.2)] rounded-t-2xl sm:rounded-2xl w-full max-w-[540px] p-5 pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))] max-h-[85dvh] overflow-y-auto">
             {/* Handle */}
-            <div className="w-9 h-1 rounded-full bg-zinc-600 mx-auto mb-4 sm:hidden" />
+            <div className="w-9 h-1 rounded-full bg-[#8aa5b8] mx-auto mb-4 sm:hidden" />
 
             <h3 className="text-lg font-extrabold text-center">⚡ Confirm Spray</h3>
-            <p className="text-sm text-zinc-500 text-center mb-4">Review details, then tap Send below</p>
+            <p className="text-sm text-[#8aa5b8] text-center mb-4">Review details, then tap Send below</p>
 
             {/* Recipients Preview */}
-            <div className="max-h-40 overflow-y-auto bg-[#0a0a0a] border border-white/[0.06] rounded-lg p-3 mb-3">
+            <div className="max-h-40 overflow-y-auto bg-[#f0f7ff] border border-[rgba(0,144,224,0.2)] rounded-lg p-3 mb-3">
               {modalRecipients.map((r, i) => (
                 <div key={i} className="flex justify-between text-[0.72rem] font-mono py-0.5">
-                  <span className="text-zinc-400">
+                  <span className="text-[#4a6070]">
                     {r.address.slice(0, 8)}…{r.address.slice(-6)}
                   </span>
-                  <span className="text-zinc-500">
+                  <span className="text-[#8aa5b8]">
                     {r.amount} {symbol}
                   </span>
                 </div>
@@ -649,7 +649,7 @@ export function SprayApp() {
             </div>
 
             {/* Summary */}
-            <div className="bg-[#0a0a0a] border border-white/[0.06] rounded-lg p-3.5 mb-4">
+            <div className="bg-[#f0f7ff] border border-[rgba(0,144,224,0.2)] rounded-lg p-3.5 mb-4">
               <ModalRow label="Recipients" value={String(validRecipients.length)} />
               <ModalRow
                 label="Amount"
@@ -661,12 +661,12 @@ export function SprayApp() {
                 value={`${fee.toFixed(6)} ${symbol}`}
                 usd={isEthMode ? toUsd(fee) : ''}
               />
-              <div className="flex justify-between items-center pt-2.5 mt-1 border-t border-spraay-red/20">
-                <span className="text-sm font-bold text-white">You Pay</span>
-                <span className="font-mono font-bold text-spraay-red text-base">
+              <div className="flex justify-between items-center pt-2.5 mt-1 border-t border-spraay-blue/20">
+                <span className="text-sm font-bold text-[#0d1f2d]">You Pay</span>
+                <span className="font-mono font-bold text-spraay-blue text-base">
                   {grandTotal.toFixed(6)} {symbol}
                   {isEthMode && toUsd(grandTotal) && (
-                    <span className="text-zinc-500 text-[0.7rem] font-normal ml-1">{toUsd(grandTotal)}</span>
+                    <span className="text-[#8aa5b8] text-[0.7rem] font-normal ml-1">{toUsd(grandTotal)}</span>
                   )}
                 </span>
               </div>
@@ -677,14 +677,14 @@ export function SprayApp() {
               <button
                 onClick={handleSend}
                 disabled={isSending || isConfirming}
-                className="w-full py-3.5 rounded-xl font-extrabold text-base bg-gradient-to-br from-spraay-red to-spraay-deep border border-spraay-red/40 text-white min-h-[48px] active:scale-[0.98] transition-transform disabled:opacity-60"
+                className="w-full py-3.5 rounded-xl font-extrabold text-base bg-gradient-to-br from-spraay-blue to-spraay-deep border border-spraay-bright/40 text-white min-h-[48px] active:scale-[0.98] transition-transform disabled:opacity-60"
               >
                 {isSending ? '⏳ Confirm in Wallet…' :
                  isConfirming ? '⏳ Confirming on Base…' :
                  `🚀 Send ${grandTotal.toFixed(4)} ${symbol}`}
               </button>
               {txHash && (
-                <p className="text-[0.72rem] text-zinc-500 text-center mt-2 font-mono">
+                <p className="text-[0.72rem] text-[#8aa5b8] text-center mt-2 font-mono">
                   Tx: {txHash.slice(0, 10)}…{txHash.slice(-8)}
                 </p>
               )}
@@ -693,12 +693,12 @@ export function SprayApp() {
             {/* Cancel */}
             <button
               onClick={() => setShowConfirm(false)}
-              className="w-full py-3 rounded-xl bg-[#0a0a0a] border border-white/[0.06] text-zinc-500 font-bold text-sm active:bg-zinc-900 transition-colors"
+              className="w-full py-3 rounded-xl bg-[#f0f7ff] border border-[rgba(0,144,224,0.2)] text-[#8aa5b8] font-bold text-sm active:bg-[#e0eef8] transition-colors"
             >
               Cancel
             </button>
 
-            <p className="text-[0.7rem] text-zinc-600 text-center mt-3 leading-snug">
+            <p className="text-[0.7rem] text-[#8aa5b8] text-center mt-3 leading-snug">
               Your wallet will ask for a final signature. No funds leave until you approve.
             </p>
           </div>
@@ -710,11 +710,11 @@ export function SprayApp() {
 
 function SummaryLine({ label, value, usd }: { label: string; value: string; usd?: string }) {
   return (
-    <div className="flex justify-between items-center py-1.5 border-b border-white/[0.03] last:border-0">
-      <span className="text-sm text-zinc-500">{label}</span>
+    <div className="flex justify-between items-center py-1.5 border-b border-[rgba(0,144,224,0.1)] last:border-0">
+      <span className="text-sm text-[#8aa5b8]">{label}</span>
       <span className="text-sm font-semibold font-mono">
         {value}
-        {usd && <span className="text-zinc-600 text-xs font-normal ml-1">{usd}</span>}
+        {usd && <span className="text-[#8aa5b8] text-xs font-normal ml-1">{usd}</span>}
       </span>
     </div>
   );
@@ -722,11 +722,11 @@ function SummaryLine({ label, value, usd }: { label: string; value: string; usd?
 
 function ModalRow({ label, value, usd }: { label: string; value: string; usd?: string }) {
   return (
-    <div className="flex justify-between items-center py-1.5 border-b border-white/[0.03] last:border-0 text-sm">
-      <span className="text-zinc-500">{label}</span>
+    <div className="flex justify-between items-center py-1.5 border-b border-[rgba(0,144,224,0.1)] last:border-0 text-sm">
+      <span className="text-[#8aa5b8]">{label}</span>
       <span className="font-semibold font-mono">
         {value}
-        {usd && <span className="text-zinc-600 text-[0.7rem] font-normal ml-1">{usd}</span>}
+        {usd && <span className="text-[#8aa5b8] text-[0.7rem] font-normal ml-1">{usd}</span>}
       </span>
     </div>
   );
