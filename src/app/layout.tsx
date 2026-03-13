@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'Spraay - Batch Crypto Payments on Base',
   description: 'Send ETH or ERC20 tokens to hundreds of recipients in a single transaction on Base.',
   other: {
-    'base:app_id': '69965f787b16c9a7e63e9754',
+    'base:app_id': '69965df89e44e08414de8e1d',
     'fc:miniapp': JSON.stringify({
       version: 'next',
       imageUrl: `${APP_URL}/spraay-og-wide.png`,
